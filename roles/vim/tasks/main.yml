@@ -1,0 +1,10 @@
+---
+- name: Install vim
+  sudo: true
+  apt: name=vim-gtk state=present
+
+- name: Checkout vim repo
+  git: repo=https://github.com/ealang/vimconf.git dest=~/.vim
+
+- name: Allow Ctrl-S
+  lineinfile: line="stty -ixon" dest=~/.bashrc
