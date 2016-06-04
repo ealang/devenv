@@ -4,6 +4,7 @@ Ansible playbook for configuring tmux, vim, and related utilities on Linux.
 
 To install:
 
+    sudo ./install_ansible.sh
     ansible-playbook main.yml -c local --ask-sudo-pass
 
 # features
