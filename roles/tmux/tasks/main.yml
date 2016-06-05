@@ -5,3 +5,6 @@
 
 - name: Configure tmux
   copy: src=tmux.conf dest=~/.tmux.conf
+
+- name: Tmux alias
+  lineinfile: line="alias tmux='tmux -2'" dest=~/.bashrc
