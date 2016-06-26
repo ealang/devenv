@@ -1,10 +1,30 @@
 ---
+- name: Install dependencies
+  sudo: true
+  apt: name=libncurses-dev
+
+- name: Clone vim
+  git: 
+    repo: git@github.com:vim/vim.git
+    dest: /tmp/vim
+    depth: 1
+    version: b12e7ef956e0b0344778b7ef93d41f4b4ed2a670
+
+- name: Compile vim
+  command: make
+  args:
+    chdir: /tmp/vim
+
 - name: Install vim
   sudo: true
-  apt: name=vim-gtk state=present
+  command: make install
+  args:
+    chdir: /tmp/vim
 
-- name: Checkout vim repo
-  git: repo=https://github.com/ealang/vimconf.git dest=~/.vim
+- name: Clone vim config
+  git:
+    repo: git@github.com:ealang/vimconf.git
+    dest: ~/.vim
 
 - name: Allow Ctrl-S
   lineinfile: line="stty -ixon" dest=~/.bashrc
