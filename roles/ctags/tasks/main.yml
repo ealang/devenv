@@ -1,0 +1,7 @@
+---
+- name: Install ctags
+  sudo: true
+  apt: name=exuberant-ctags state=present
+
+- name: Configure ctags
+  copy: src=ctags dest=~/.ctags
