@@ -3,8 +3,17 @@
   sudo: true
   apt: name=tmux state=present
 
+- name: Get tmux version
+  shell: tmux -V | python -c "import re; ver = map(int, re.search(r'\d+.\d+', raw_input()).group().split('.')); print ver < [2, 1]"
+  register: tmux_is_pre_21
+  
 - name: Configure tmux
-  copy: src=tmux.conf dest=~/.tmux.conf
+  copy: src=2.0-tmux.conf dest=~/.tmux.conf
+  when: tmux_is_pre_21.stdout == "True"
+
+- name: Configure tmux
+  copy: src=2.1-tmux.conf dest=~/.tmux.conf
+  when: tmux_is_pre_21.stdout == "False"
 
 - name: Tmux alias
   lineinfile: line="alias tmux='tmux -2'" dest=~/.bashrc
