@@ -5,10 +5,9 @@
 
 - name: Clone vim
   git: 
-    repo: git@github.com:vim/vim.git
+    repo: https://github.com/vim/vim
     dest: /tmp/vim
     depth: 1
-    version: b12e7ef956e0b0344778b7ef93d41f4b4ed2a670
 
 - name: Compile vim
   command: make
@@ -23,7 +22,7 @@
 
 - name: Clone vim config
   git:
-    repo: git@github.com:ealang/vimconf.git
+    repo: https://github.com/ealang/vimconf
     dest: ~/.vim
 
 - name: Allow Ctrl-S
