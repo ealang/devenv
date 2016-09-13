@@ -1,0 +1,5 @@
+- name: Create xmonad dir
+  file: path=~/.xmonad state=directory
+
+- name: Configure xmonad
+  copy: src=xmonad.hs dest=~/.xmonad/xmonad.hs
