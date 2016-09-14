@@ -6,3 +6,4 @@
   - python-flake8
   - ack-grep
   - exuberant-ctags
+  - guake
