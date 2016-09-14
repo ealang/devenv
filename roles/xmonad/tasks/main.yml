@@ -3,3 +3,6 @@
 
 - name: Configure xmonad
   copy: src=xmonad.hs dest=~/.xmonad/xmonad.hs
+
+- name: Bind caps -> esc
+  copy: src=xsessionrc dest=~/.xsessionrc
