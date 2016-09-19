@@ -1,0 +1,2 @@
+- name: Configure vim plugin
+  copy: src=ideavimrc dest=~/.ideavimrc

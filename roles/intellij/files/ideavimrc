@@ -1,0 +1,9 @@
+nnoremap q :q<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+noremap <C-h> <ESC><C-w>h
+noremap <C-l> <ESC><C-w>l
+noremap <C-j> <ESC><C-w>j
+noremap <C-k> <ESC><C-w>k
