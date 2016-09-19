@@ -3,7 +3,12 @@ nnoremap q :q<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-noremap <C-h> <ESC><C-w>h
-noremap <C-l> <ESC><C-w>l
-noremap <C-j> <ESC><C-w>j
-noremap <C-k> <ESC><C-w>k
+" easier move between splits
+imap <C-h> <ESC><C-h>
+imap <C-j> <ESC><C-j>
+imap <C-k> <ESC><C-k>
+imap <C-l> <ESC><C-l>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
