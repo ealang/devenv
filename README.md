@@ -9,7 +9,6 @@ To install:
 
 # features
 
-* Common utilities (e.g. ctags)
+* Common utilities and config (e.g. ctags, tmux)
 * [Customized Vim](https://github.com/ealang/vimconf)
-* Tmux with mouse support and Ctrl-HJKL shortcuts to move between vim and tmux splits
 

@@ -1,0 +1,9 @@
+# terminal environment
+- name: all
+  connection: local
+  hosts: 127.0.0.1
+  roles:
+    - tmux
+    - vim
+    - ctags
+    - utils

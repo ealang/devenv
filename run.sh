@@ -1,2 +1,2 @@
 #!/bin/sh
-ansible-playbook main.yml -c local --ask-sudo-pass
+ansible-playbook all.yml -c local --ask-sudo-pass
