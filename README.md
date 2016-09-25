@@ -1,14 +1,18 @@
-# devenv
+# Devenv
 
-Ansible playbook for configuring tmux, vim, and related utilities on Linux.
+Ansible playbooks for installing and configuring various programs on Linux.
 
-To install:
+To install everything:
 
     sudo ./install_ansible.sh
     ./run.sh
 
-# features
+The *terminal.yml* and *desktop.yml* playbooks contain roles specific to terminal and desktop environments.
 
-* Common utilities and config (e.g. ctags, tmux)
+# Features
+
+* Common programs (e.g. tmux, elinks)
 * [Customized Vim](https://github.com/ealang/vimconf)
+* [xmonad](http://xmonad.org/)
+* [xflux](https://justgetflux.com/research.html)
 
