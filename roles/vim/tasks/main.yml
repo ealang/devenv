@@ -8,4 +8,8 @@
   lineinfile: line="stty -ixon" dest=~/.bashrc
 
 - name: Bind caps -> esc
-  lineinfile: dest=~/.xsessionrc state=present line="setxkbmap -option caps:escape"
+  lineinfile:
+    dest: ~/.xsessionrc
+    state: present
+    create: yes
+    line: "setxkbmap -option caps:escape"
