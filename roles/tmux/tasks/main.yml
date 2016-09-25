@@ -1,11 +1,12 @@
 ---
 - name: Install tmux 
-  sudo: true
+  become: true
   apt: name=tmux state=present
 
 - name: Get tmux version
   shell: tmux -V | python -c "import re; ver = map(int, re.search(r'\d+.\d+', raw_input()).group().split('.')); print ver >= [2, 1]"
   register: tmux_is_post_21
+  changed_when: False
   
 - name: Configure tmux
   template: src=tmux.conf dest=~/.tmux.conf
