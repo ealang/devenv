@@ -1,29 +1,11 @@
----
-- name: Install dependencies
-  sudo: true
-  apt: name=libncurses-dev
+- stat: path=/usr/local/bin/vim
+  register: vim
 
-- name: Clone vim
-  git: 
-    repo: https://github.com/vim/vim
-    dest: /tmp/vim
-    depth: 1
-
-- name: Compile vim
-  command: make
-  args:
-    chdir: /tmp/vim
-
-- name: Install vim
-  sudo: true
-  command: make install
-  args:
-    chdir: /tmp/vim
-
-- name: Clone vim config
-  git:
-    repo: https://github.com/ealang/vimconf
-    dest: ~/.vim
+- include: install.yml
+  when: vim.stat.exists == False
 
 - name: Allow Ctrl-S
   lineinfile: line="stty -ixon" dest=~/.bashrc
+
+- name: Bind caps -> esc
+  lineinfile: dest=~/.xsessionrc state=present line="setxkbmap -option caps:escape"

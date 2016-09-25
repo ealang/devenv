@@ -1,0 +1,25 @@
+- name: Install dependencies
+  become: true
+  apt: name=libncurses-dev
+
+- name: Clone vim
+  git: 
+    repo: https://github.com/vim/vim
+    dest: /tmp/vim
+    depth: 1
+
+- name: Compile vim
+  command: make
+  args:
+    chdir: /tmp/vim
+
+- name: Install vim
+  become: true
+  command: make install
+  args:
+    chdir: /tmp/vim
+
+- name: Clone vim config
+  git:
+    repo: https://github.com/ealang/vimconf
+    dest: ~/.vim
