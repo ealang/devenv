@@ -1,0 +1,21 @@
+- stat: path=/usr/bin/xflux
+  register: xflux
+
+- name: Download xflux
+  get_url:
+    url: https://justgetflux.com/linux/xflux64.tgz
+    dest: /tmp/xflux64.tgz
+  when: xflux.stat.exists == False
+
+- name: Install xflux
+  unarchive:
+    src:  /tmp/xflux64.tgz
+    dest: /usr/bin/
+    owner: root
+    mode: 0755
+  become: yes
+  become_user: root
+  when: xflux.stat.exists == False
+
+- name: Run xflux at startup
+  lineinfile: dest=~/.xsessionrc state=present line="xflux -z 35806 -k 3000 &"
