@@ -6,4 +6,5 @@
     - tmux
     - vim
     - ctags
+    - elinks
     - utils
