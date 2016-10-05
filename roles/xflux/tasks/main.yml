@@ -1,4 +1,4 @@
-- stat: path=/usr/bin/xflux
+- stat: path=/usr/local/bin/xflux
   register: xflux
 
 - name: Download xflux
@@ -10,7 +10,7 @@
 - name: Install xflux
   unarchive:
     src:  /tmp/xflux64.tgz
-    dest: /usr/bin/
+    dest: /usr/local/bin/
     owner: root
     mode: 0755
   become: yes
