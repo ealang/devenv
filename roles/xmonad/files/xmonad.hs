@@ -10,6 +10,7 @@ myKeys = [((0, xF86XK_AudioLowerVolume), spawn "amixer -D pulse sset Master 3%-"
           ((0, xF86XK_AudioRaiseVolume), spawn "amixer -D pulse sset Master 3%+"),
           ((0, xF86XK_AudioMute), spawn "amixer -D pulse sset Master toggle"),
           ((0, xF86XK_Calculator), spawn "gnome-terminal -e python3"),
+          ((mod4Mask .|. shiftMask, xK_l), spawn "sleep 0.3 && xset dpms force off && slock"),
           ((mod4Mask, xK_i), sendMessage ShrinkSlave),
           ((mod4Mask, xK_u), sendMessage ExpandSlave)]
 
