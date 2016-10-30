@@ -5,7 +5,6 @@
     state: present
   with_items:
   - xmonad
-  - xmobar
 
 - name: Create xmonad dir
   file: path=~/.xmonad state=directory
