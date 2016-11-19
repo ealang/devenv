@@ -1,7 +1,7 @@
 ---
 - name: Install tmux 
   become: true
-  apt: name=tmux state=present
+  package: name=tmux state=present
 
 - name: Get tmux version
   shell: tmux -V | python -c "import re; ver = map(int, re.search(r'\d+.\d+', raw_input()).group().split('.')); print ver >= [2, 1]"

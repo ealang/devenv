@@ -1,6 +1,7 @@
 - name: Install dependencies
   become: true
-  apt: name=libncurses-dev
+  package: name=libncurses-dev state=present
+  when: ansible_distribution == 'Ubuntu'
 
 - name: Clone vim
   git: 

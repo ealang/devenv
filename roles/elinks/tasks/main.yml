@@ -1,6 +1,6 @@
 - name: Install elinks
   become: true
-  apt: name=elinks state=present
+  package: name=elinks state=present
 
 - name: Create elinks config dir
   file: path=~/.elinks state=directory

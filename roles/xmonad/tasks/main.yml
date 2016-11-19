@@ -1,6 +1,6 @@
 - name: Install xmonad
   become: true
-  apt:
+  package:
     name: "{{ item }}"
     state: present
   with_items:

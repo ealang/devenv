@@ -1,13 +1,20 @@
 ---
 - name: Install utils 
   become: true
-  apt:
+  package:
     name: "{{ item }}"
     state: present
   with_items:
   - ipython
   - python-virtualenv
   - python-flake8
-  - ack-grep
-  - exuberant-ctags
   - htop
+
+- name: Install utils 
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - ack-grep
+  when: ansible_distribution == 'Ubuntu'

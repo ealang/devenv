@@ -2,12 +2,9 @@
 
 Ansible playbooks for installing and configuring various programs on Linux.
 
-To install everything:
-
-    sudo ./install_ansible.sh
-    ./run.sh
-
 The *terminal.yml* and *desktop.yml* playbooks contain roles specific to terminal and desktop environments.
+
+    ./run.sh <playbook-name>
 
 # Features
 
