@@ -1,10 +1,11 @@
+import Graphics.X11.ExtraTypes.XF86
 import XMonad
-import XMonad.Hooks.SetWMName
+import XMonad.Config.Gnome
 import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.MouseResizableTile
 import XMonad.Layout.ShowWName
 import XMonad.Util.EZConfig
-import Graphics.X11.ExtraTypes.XF86
 
 myKeys = [((0, xF86XK_AudioLowerVolume), spawn "amixer -D pulse sset Master 3%-"),
           ((0, xF86XK_AudioRaiseVolume), spawn "amixer -D pulse sset Master 3%+"),
@@ -15,7 +16,8 @@ myKeys = [((0, xF86XK_AudioLowerVolume), spawn "amixer -D pulse sset Master 3%-"
           ((0, xK_Print), spawn "gnome-screenshot"),
           ((mod4Mask .|. shiftMask, xK_l), spawn "sleep 0.3 && xset dpms force off && slock"),
           ((mod4Mask, xK_i), sendMessage ShrinkSlave),
-          ((mod4Mask, xK_u), sendMessage ExpandSlave)]
+          ((mod4Mask, xK_u), sendMessage ExpandSlave),
+          ((mod4Mask, xK_p), spawn "dmenu_run")]
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
@@ -26,7 +28,7 @@ myLayoutHook = showWName ( mouseResizableTile { isMirrored = False, draggerType 
                            Full |||
                            mouseResizableTile { isMirrored = True, draggerType = noGapDragger } )
 
-main = xmonad $ defaultConfig {
+main = xmonad $ gnomeConfig {
     borderWidth = 0,
     layoutHook = myLayoutHook,
     logHook = myLogHook,
