@@ -5,6 +5,7 @@
     state: present
   with_items:
   - xmonad
+  - xbacklight
 
 - name: Create xmonad dir
   file: path=~/.xmonad state=directory
