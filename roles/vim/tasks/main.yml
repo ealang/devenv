@@ -1,10 +1,5 @@
 - stat: path=/usr/local/bin/vim
   register: vim
-  when: ansible_distribution == 'Ubuntu'
-
-- stat: path=/usr/bin/vim
-  register: vim
-  when: ansible_distribution == 'Fedora'
 
 - include: install.yml
   when: vim.stat.exists == False
