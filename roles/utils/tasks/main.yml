@@ -7,8 +7,10 @@
   with_items:
   - ipython
   - python-virtualenv
-  - python-flake8
   - htop
+  - flake8
+  - nodejs
+  - npm
 
 - name: Install utils 
   become: true
@@ -18,3 +20,16 @@
   with_items:
   - ack-grep
   when: ansible_distribution == 'Ubuntu'
+
+- name: Install jshint
+  become: true
+  npm:
+    name: jshint
+    global: yes
+
+- name: Create nodejs alias
+  become: true
+  file:
+    src: /usr/bin/nodejs
+    dest: /usr/bin/node
+    state: link
