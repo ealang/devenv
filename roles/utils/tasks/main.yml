@@ -3,22 +3,15 @@
   become: true
   package:
     name: "{{ item }}"
-    state: present
   with_items:
-  - ipython
-  - python-virtualenv
   - htop
-  - flake8
   - nodejs
   - npm
 
 - name: Install utils 
   become: true
   package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-  - ack-grep
+    name: ack-grep
   when: ansible_distribution == 'Ubuntu'
 
 - name: Install jshint

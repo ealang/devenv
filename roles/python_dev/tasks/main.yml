@@ -1,0 +1,23 @@
+---
+- name: Install python
+  become: true
+  package:
+    name: "{{ item }}"
+  with_items:
+  - ipython
+  - ipython3
+  - python-virtualenv
+  - python-dev
+  - python3-dev
+
+- name: Install flake8
+  become: true
+  package:
+    name: python-flake8
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == "14.04"
+
+- name: Install flake8
+  become: true
+  package:
+    name: flake8
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version > "14.04"
