@@ -14,12 +14,15 @@
     name: ack-grep
   when: ansible_distribution == 'Ubuntu'
 
-- name: Add Robot test files to ack-grep types
+- name: Add extensions to ack-grep types
   lineinfile:
     dest: ~/.ackrc
     create: yes
     state: present
-    line: --type-set=robot:ext:robot
+    line: "{{ item }}"
+  with_items:
+  - "--type-set=rst:ext:rst"
+  - "--type-set=robot:ext:robot"
 
 - name: Install jshint
   become: true
