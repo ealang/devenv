@@ -23,6 +23,7 @@
   with_items:
   - "--type-set=rst:ext:rst"
   - "--type-set=robot:ext:robot"
+  - "--type-set=txt:ext:txt"
 
 - name: Install jshint
   become: true
