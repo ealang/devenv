@@ -1,0 +1,2 @@
+- include: xmonad.yml
+- include: xflux.yml

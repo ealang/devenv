@@ -1,0 +1,12 @@
+- name: Install misc utils 
+  become: true
+  package:
+    name: "{{ item }}"
+  with_items:
+  - htop
+  - tree
+
+- include: ctags.yml
+- include: ack-grep.yml
+- include: elinks.yml
+- include: tmux.yml

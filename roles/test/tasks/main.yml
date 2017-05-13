@@ -1,2 +1,0 @@
-- name: sleep
-  shell: sleep 3600

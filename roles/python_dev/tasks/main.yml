@@ -1,5 +1,4 @@
----
-- name: Install python
+- name: Install python utils
   become: true
   package:
     name: "{{ item }}"

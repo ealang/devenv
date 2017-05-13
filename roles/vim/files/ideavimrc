@@ -3,7 +3,6 @@ nnoremap q :q<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" easier move between splits
 imap <C-h> <ESC><C-h>
 imap <C-j> <ESC><C-j>
 imap <C-k> <ESC><C-k>

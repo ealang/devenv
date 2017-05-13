@@ -1,2 +1,2 @@
-- include: terminal.yml
-- include: desktop.yml
+- include: development.yml
+- include: desktop_env.yml

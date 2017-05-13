@@ -4,7 +4,7 @@
 - include: install.yml
   when: vim.stat.exists == False
 
-- name: Allow Ctrl-S
+- name: Allow Ctrl-S in terminal
   lineinfile: line="stty -ixon" dest=~/.bashrc
 
 - name: Bind caps -> esc
@@ -13,3 +13,6 @@
     state: present
     create: yes
     line: "setxkbmap -option caps:escape"
+
+- name: Write Intellij vimrc
+  copy: src=ideavimrc dest=~/.ideavimrc

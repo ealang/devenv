@@ -1,0 +1,16 @@
+- name: Install ack-grep
+  become: true
+  package:
+    name: ack-grep
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Add extensions to ack-grep types
+  lineinfile:
+    dest: ~/.ackrc
+    create: yes
+    state: present
+    line: "{{ item }}"
+  with_items:
+  - "--type-set=rst:ext:rst"
+  - "--type-set=robot:ext:robot"
+  - "--type-set=txt:ext:txt"

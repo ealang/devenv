@@ -1,0 +1,20 @@
+- name: Install js utils 
+  become: true
+  package:
+    name: "{{ item }}"
+  with_items:
+  - nodejs
+  - npm
+
+- name: Install jshint
+  become: true
+  npm:
+    name: jshint
+    global: yes
+
+- name: Create nodejs alias
+  become: true
+  file:
+    src: /usr/bin/nodejs
+    dest: /usr/bin/node
+    state: link
