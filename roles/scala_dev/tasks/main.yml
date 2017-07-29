@@ -31,3 +31,4 @@
   with_items:
   - oracle-java8-installer
   - sbt
+  - scala
