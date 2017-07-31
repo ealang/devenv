@@ -14,5 +14,8 @@
     create: yes
     line: "setxkbmap -option caps:escape"
 
+- name: Create vimundo dir
+  file: path=~/.vimundo state=directory
+
 - name: Write Intellij vimrc
   copy: src=ideavimrc dest=~/.ideavimrc
