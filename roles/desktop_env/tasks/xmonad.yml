@@ -6,6 +6,7 @@
   with_items:
   - xmonad
   - xbacklight
+  - suckless-tools
 
 - name: Create xmonad dir
   file: path=~/.xmonad state=directory
