@@ -15,7 +15,7 @@
     depth: 1
 
 - name: Compile vim
-  command: make
+  command: "./configure --with-x && make"
   args:
     chdir: /tmp/vim
 
