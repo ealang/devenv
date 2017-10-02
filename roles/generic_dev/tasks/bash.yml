@@ -1,0 +1,5 @@
+- name: Use vi mode for bash
+  lineinfile:
+    dest: ~/.bashrc
+    state: present
+    line: set -o vi

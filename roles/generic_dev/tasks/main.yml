@@ -10,3 +10,4 @@
 - include: ack-grep.yml
 - include: elinks.yml
 - include: tmux.yml
+- include: bash.yml
