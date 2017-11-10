@@ -1,20 +1,27 @@
+- stat: path=/usr/bin/nodejs
+  register: nodejs
+
+- name: Fetch node install script
+  get_url:
+    url: https://deb.nodesource.com/setup_9.x 
+    dest: /tmp/setup_9.x
+  when: nodejs.stat.exists == False
+
+- name: Run node install script
+  script: /tmp/setup_9.x
+  become: yes
+  when: nodejs.stat.exists == False
+
 - name: Install js utils 
   become: true
   package:
     name: "{{ item }}"
+    update_cache: yes
   with_items:
   - nodejs
-  - npm
 
 - name: Install jshint
   become: true
   npm:
     name: jshint
     global: yes
-
-- name: Create nodejs alias
-  become: true
-  file:
-    src: /usr/bin/nodejs
-    dest: /usr/bin/node
-    state: link
