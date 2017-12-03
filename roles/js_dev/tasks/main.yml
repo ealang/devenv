@@ -20,8 +20,8 @@
   with_items:
   - nodejs
 
-- name: Install jshint
+- name: Install eslint
   become: true
   npm:
-    name: jshint
+    name: eslint
     global: yes
