@@ -26,12 +26,11 @@ myStartupHook = do
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
-    where fadeAmount = 0.85
+    where fadeAmount = 0.95
 
 noGapDragger = FixedDragger { gapWidth = 0, draggerWidth = 6 }
 myLayoutHook = showWName ( mouseResizableTile { isMirrored = False, draggerType = noGapDragger } |||
-                           Full |||
-                           mouseResizableTile { isMirrored = True, draggerType = noGapDragger } )
+                           Full )
 
 main = xmonad $ defaultConfig {
     borderWidth = 0,
