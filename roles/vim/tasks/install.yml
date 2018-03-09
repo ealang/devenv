@@ -15,7 +15,17 @@
     depth: 1
 
 - name: Compile vim
-  command: "./configure --with-x && make"
+  command: |
+    ./configure 
+            --with-x
+            --with-features=huge
+            --enable-multibyte
+            --enable-rubyinterp=yes
+            --enable-pythoninterp=yes
+            --enable-python3interp=yes
+            --enable-perlinterp=yes
+            --enable-luainterp=yes
+            --prefix=/usr/local && make
   args:
     chdir: /tmp/vim
 
@@ -25,7 +35,11 @@
   args:
     chdir: /tmp/vim
 
+- stat: path=~/.vim
+  register: vimhome
+
 - name: Clone vim config
   git:
     repo: https://github.com/ealang/vimconf
     dest: ~/.vim
+  when: vimhome.stat.exists == False
