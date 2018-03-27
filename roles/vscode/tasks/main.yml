@@ -1,0 +1,8 @@
+- name: Create vscode settings dir
+  file: path=~/.config/Code/User state=directory
+
+- name: Place vscode settings file (with backup)
+  copy: src=settings.json dest=~/.config/Code/User/settings.json backup=yes
+
+- name: Place vscode keybindings file (with backup)
+  copy: src=keybindings.json dest=~/.config/Code/User/keybindings.json backup=yes

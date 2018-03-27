@@ -1,0 +1,28 @@
+{
+    "window.zoomLevel": -1,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "keyboard.dispatch": "keyCode",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["q"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":q"
+                }
+            ]
+        },
+        {
+            "before": ["Q"],
+            "after": ["q"]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-p>": false,
+        "<C-v>": false,
+        "<C-a>": false
+    }
+}
