@@ -1,9 +1,13 @@
 {
+    "files.exclude": {
+        "**/.*": true
+    },
     "window.zoomLevel": -1,
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "keyboard.dispatch": "keyCode",
     "diffEditor.ignoreTrimWhitespace": true,
+    "files.autoSave": "off",
     "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": ["q"],
@@ -34,5 +38,5 @@
         "<C-a>": false
     },
     "vim.useSystemClipboard": true,
-    "files.autoSave": "afterDelay",
+    "workbench.activityBar.visible": false,
 }

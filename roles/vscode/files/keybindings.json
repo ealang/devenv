@@ -49,4 +49,12 @@
         "command": "extension.vim_ctrl+pageup",
         "when": "editorTextFocus && vim.active && vim.use<C-pageup> && !inDebugRepl"
     },
+    {
+        "key": "shift+escape",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "F12",
+        "command": "workbench.action.toggleSidebarVisibility"
+    }
 ]
