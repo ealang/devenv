@@ -17,6 +17,14 @@
         {
             "before": ["Q"],
             "after": ["q"]
+        },
+        {
+            "before": ["<"],
+            "after": ["<", "g", "v"],
+        },
+        {
+            "before": [">"],
+            "after": [">", "g", "v"],
         }
     ],
     "vim.handleKeys": {
@@ -24,5 +32,7 @@
         "<C-p>": false,
         "<C-v>": false,
         "<C-a>": false
-    }
+    },
+    "vim.useSystemClipboard": true,
+    "files.autoSave": "afterDelay",
 }
