@@ -1,12 +1,6 @@
 - name: Install ctags
   become: true
   package: name=exuberant-ctags
-  when: ansible_distribution == 'Ubuntu'
-
-- name: Install ctags
-  become: true
-  package: name=ctags
-  when: ansible_distribution == 'Fedora'
 
 - name: Configure ctags
   copy: src=ctags dest=~/.ctags

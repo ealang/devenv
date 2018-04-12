@@ -2,7 +2,6 @@
   become: true
   package:
     name: ack-grep
-  when: ansible_distribution == 'Ubuntu'
 
 - name: Add extensions to ack-grep types
   lineinfile:
