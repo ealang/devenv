@@ -11,3 +11,4 @@
 - include: elinks.yml
 - include: tmux.yml
 - include: bash.yml
+- include: git.yml

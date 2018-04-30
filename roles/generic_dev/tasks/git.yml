@@ -1,0 +1,19 @@
+- name: Add git bash aliases
+  lineinfile:
+    dest: ~/.bashrc
+    state: present
+    line: "alias {{ item }}"
+  with_items:
+  - gs='git status'
+  - gr='git reset'
+  - gb='git branch'
+  - ga='git add'
+  - gci='git commit'
+  - gcz='git cz'
+  - gco='git checkout'
+  - gd='git diff'
+  - gdc='git diff --cached'
+  - gl='git log'
+  - gst='git stash'
+  - gpl='git pull'
+  - gps='git push'

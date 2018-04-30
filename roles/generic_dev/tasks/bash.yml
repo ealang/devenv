@@ -3,3 +3,9 @@
     dest: ~/.bashrc
     state: present
     line: set -o vi
+
+- name: Add bash aliases
+  lineinfile:
+    dest: ~/.bashrc
+    state: present
+    line: alias c='clear'
