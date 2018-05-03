@@ -12,3 +12,4 @@
 - include: tmux.yml
 - include: bash.yml
 - include: git.yml
+- include: base16.yml

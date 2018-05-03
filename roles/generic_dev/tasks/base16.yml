@@ -1,0 +1,14 @@
+- name: Clone base16-shell
+  git: 
+    repo: https://github.com/chriskempson/base16-shell
+    dest: ~/.config/base16-shell
+
+- name: Add base16-shell config
+  lineinfile:
+    dest: ~/.bashrc
+    state: present
+    line: "{{ item }}"
+  with_items:
+    - 'BASE16_SHELL=$HOME/.config/base16-shell'
+    - '[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"'
+
