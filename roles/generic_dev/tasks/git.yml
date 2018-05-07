@@ -14,6 +14,6 @@
   - gd='git diff'
   - gdc='git diff --cached'
   - gl='git log'
-  - gst='git stash'
+  - gsh='git stash'
   - gpl='git pull'
   - gps='git push'
