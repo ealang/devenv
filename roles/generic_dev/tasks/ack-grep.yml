@@ -14,3 +14,4 @@
   - "--type-set=robot:ext:robot"
   - "--type-set=txt:ext:txt"
   - "--type-set=ts:ext:ts"
+  - "--type-set=yang:ext:yang"
