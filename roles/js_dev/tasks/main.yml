@@ -20,8 +20,11 @@
   with_items:
   - nodejs
 
-- name: Install eslint
+- name: Install node packages
   become: true
   npm:
-    name: eslint
+    name: "{{ item }}"
     global: yes
+  with_items:
+  - nodejs
+  - typescript
