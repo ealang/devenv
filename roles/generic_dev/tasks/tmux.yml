@@ -3,7 +3,7 @@
   package: name=tmux state=present
 
 - name: Get tmux version
-  shell: tmux -V | python -c "import re; ver = map(int, re.search(r'\d+.\d+', raw_input()).group().split('.')); print ver >= [2, 1]"
+  shell: tmux -V | python3 -c "import re; ver = list(map(int, re.search(r'\d+.\d+', input()).group().split('.'))); print(ver >= [2, 1])"
   register: tmux_is_post_21
   changed_when: False
   
