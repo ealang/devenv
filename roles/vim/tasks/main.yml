@@ -1,8 +1,10 @@
-- stat: path=/usr/local/bin/vim
+- name: Test for vim install
+  command: "which vim"
   register: vim
+  ignore_errors: yes
 
 - include: install.yml
-  when: vim.stat.exists == False
+  when: vim.stdout == ""
 
 - name: Allow Ctrl-S in terminal
   lineinfile: line="stty -ixon" dest=~/.bashrc
