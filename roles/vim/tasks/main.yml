@@ -21,3 +21,9 @@
 
 - name: Write Intellij vimrc
   copy: src=ideavimrc dest=~/.ideavimrc
+
+- name: Add bash alias
+  lineinfile:
+    dest: ~/.bashrc
+    state: present
+    line: alias v='vim'
