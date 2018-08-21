@@ -13,3 +13,4 @@
 - include: bash.yml
 - include: git.yml
 - include: base16.yml
+- include: docker.yml
