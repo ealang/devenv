@@ -15,10 +15,3 @@
     mode: 0755
   become: yes
   when: xflux.stat.exists == False
-
-- name: Run xflux at startup
-  lineinfile:
-    dest: ~/.xsessionrc
-    state: present
-    create: yes
-    line: "xflux -z 35806 -k 3000 &"
