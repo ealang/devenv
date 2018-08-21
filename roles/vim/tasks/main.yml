@@ -1,10 +1,7 @@
-- name: Test for vim install
-  command: "which vim"
-  register: vim
-  ignore_errors: yes
-
-- include: install.yml
-  when: vim.stdout == ""
+- name: Install vim
+  become: true
+  package:
+    name: vim-gtk3
 
 - name: Allow Ctrl-S in terminal
   lineinfile: line="stty -ixon" dest=~/.bashrc
