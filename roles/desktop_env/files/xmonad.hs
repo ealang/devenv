@@ -18,7 +18,8 @@ myKeys = [((0, xF86XK_AudioLowerVolume), spawn "amixer -D pulse sset Master 3%-"
           ((mod4Mask .|. shiftMask, xK_l), spawn "sleep 0.3 && xset dpms force off && slock"),
           ((mod4Mask, xK_i), sendMessage ShrinkSlave),
           ((mod4Mask, xK_u), sendMessage ExpandSlave),
-          ((mod4Mask, xK_p), spawn "dmenu_run")]
+          ((mod4Mask, xK_p), spawn "dmenu_run"),
+          ((mod4Mask .|. shiftMask, xK_q), spawn "true")]
 
 myStartupHook = do
     spawn "xcompmgr &"
