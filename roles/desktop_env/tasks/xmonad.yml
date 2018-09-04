@@ -5,11 +5,21 @@
     state: present
   with_items:
   - xmonad
-  - xbacklight
   - suckless-tools
+  - feh
+  - xcompmgr
 
 - name: Create xmonad dir
   file: path=~/.xmonad state=directory
 
 - name: Configure xmonad
   copy: src=xmonad.hs dest=~/.xmonad/xmonad.hs
+
+- name: Bind Caps lock to Esc
+  lineinfile: line="setxkbmap -option caps:escape" dest=~/.xsessionrc
+
+- name: Start xcompmgr on start
+  lineinfile: line="xcompmgr &" dest=~/.xsessionrc
+
+- name: Add desktop background
+  lineinfile: line="feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &" dest=~/.xsessionrc

@@ -6,13 +6,6 @@
 - name: Allow Ctrl-S in terminal
   lineinfile: line="stty -ixon" dest=~/.bashrc
 
-- name: Bind caps -> esc
-  lineinfile:
-    dest: ~/.xsessionrc
-    state: present
-    create: yes
-    line: "setxkbmap -option caps:escape"
-
 - name: Create vimundo dir
   file: path=~/.vimundo state=directory
 

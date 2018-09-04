@@ -1,0 +1,7 @@
+- name: Map caps lock to escape
+  become: true
+  lineinfile:
+    dest: /etc/default/keyboard
+    state: present
+    line: 'XKBOPTIONS="caps:escape"'
+    regexp: 'XKBOPTIONS='
