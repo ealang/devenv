@@ -2,13 +2,12 @@
   become: true
   package: name=tmux state=present
 
-- name: Get tmux version
-  shell: tmux -V | python3 -c "import re; ver = list(map(int, re.search(r'\d+.\d+', input()).group().split('.'))); print(ver >= [2, 1])"
-  register: tmux_is_post_21
-  changed_when: False
-  
+- name: Install xclip
+  become: true
+  package: name=xclip state=present
+
 - name: Configure tmux
-  template: src=tmux.conf dest=~/.tmux.conf
+  copy: src=tmux.conf dest=~/.tmux.conf
 
 - name: Tmux alias
   lineinfile: line="alias tmux='tmux -2'" dest=~/.bashrc
