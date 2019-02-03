@@ -1,4 +1,2 @@
 - include: xmonad.yml
-- include: xflux.yml
 - include: guake.yml
-- include: backlight.yml
