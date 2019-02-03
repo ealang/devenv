@@ -1,0 +1,21 @@
+- name: Install xboxdrv
+  become: true
+  package:
+    name: xboxdrv
+    state: present
+
+- name: Blacklist xpad driver
+  copy: src=blacklist-xpad.conf dest=/etc/modprobe.d/blacklist-xpad.conf
+  register: blacklist
+  become: true
+
+- name: rmmod xpad driver
+  command: rmmod xpad || true
+  when: blacklist.changed
+  become: true
+
+- name: Place xpad config file
+  copy: src=xboxdrv-mapping.ini dest=~/.config/
+
+- name: Place xpad launch script
+  copy: src=xboxdrv-mapper dest=~/.config/ mode=755
