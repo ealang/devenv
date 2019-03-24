@@ -1,5 +1,0 @@
-- name: Install guake
-  become: true
-  package:
-    name: guake
-    state: present

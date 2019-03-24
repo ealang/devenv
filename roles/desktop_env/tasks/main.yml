@@ -1,2 +1,10 @@
 - include: xmonad.yml
-- include: guake.yml
+
+- name: Install misc utilities
+  become: true
+  package:
+    name: "{{ item }}"
+  with_items:
+  - guake
+  - gnome-tweak-tool
+  - gimp
