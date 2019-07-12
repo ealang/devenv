@@ -8,4 +8,7 @@
   lineinfile:
     dest: ~/.bashrc
     state: present
-    line: alias c='clear'
+    line: "{{ item }}"
+  with_items:
+  - "alias c='clear'"
+  - "alias ta='tmux ls && tmux attach -d -t '"
