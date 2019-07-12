@@ -21,3 +21,5 @@
   - "--type-set=md:ext:md,markdown"
   - "--type-set=markdown:ext:md,markdown"
   - "--type-set=py:ext:py"
+  - "--type-set=hidl:ext:hidl"
+  - "--type-set=cc:ext:cc,cpp,hh,h"
