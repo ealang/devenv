@@ -26,3 +26,4 @@
   - "--type-set=cpp:ext:cc,cpp"
   - "--type-set=hh:ext:h,hh"
   - "--type-set=h:ext:h,hh"
+  - "--type-set=proto:ext:proto"
