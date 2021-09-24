@@ -9,8 +9,5 @@
 - name: Configure tmux
   copy: src=tmux.conf dest=~/.tmux.conf
 
-- name: Tmux alias
-  lineinfile: line="alias tmux='tmux -2'" dest=~/.bashrc
-
 - name: Tmux attach alias
   lineinfile: line="alias ta='tmux attach -d -t '" dest=~/.bashrc

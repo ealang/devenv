@@ -1,8 +1,0 @@
-- name: all
-  connection: local
-  hosts: 127.0.0.1
-  roles:
-    - generic_dev
-    - python_dev
-    - vim
-    - vscode

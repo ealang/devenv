@@ -5,9 +5,7 @@
   with_items:
   - htop
   - tree
-  - cmake
 
-- include: ctags.yml
 - include: ack-grep.yml
 - include: elinks.yml
 - include: tmux.yml

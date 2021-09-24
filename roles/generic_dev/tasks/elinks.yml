@@ -1,9 +1,0 @@
-- name: Install elinks
-  become: true
-  package: name=elinks state=present
-
-- name: Create elinks config dir
-  file: path=~/.elinks state=directory
-
-- name: Configure elinks
-  copy: src=elinks.conf dest=~/.elinks/elinks.conf

@@ -1,6 +1,0 @@
-- name: Install ctags
-  become: true
-  package: name=exuberant-ctags
-
-- name: Configure ctags
-  copy: src=ctags dest=~/.ctags
